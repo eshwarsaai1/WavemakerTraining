@@ -12,65 +12,65 @@
     <div class="mt-5 px-1 d-flex justify-content-center">
         <!-- <div class="col-md-4"></div> -->
         <div class="col-md-4">
-            <div class="p-3 pt-0 bg-dark border rounded">
-                <h1 class="display1 text-white text-center py-0">Calculator</h1>
-                <ul class="nav text-success p-1">
+            <div class="p-3 pt-1 bg-dark border rounded">
+                <h1 class="display1 text-end text-white text-center py-0">Calculator</h1>
+                <ul class="nav mb-3 p-1">
                     <li class="nav-item mx-3">
-                      View
+                      <a href="#">View</a>
                     </li>
                     <li class="nav-item mx-3">
-                      Edit
+                        <a href="#">Edit</a>
                     </li>
                     <li class="nav-item mx-3">
-                      Help
+                        <a href="#">Help</a>
                     </li>
                   </ul>
                 <!-- <input class="container bg-white my-2 p-5 border rounded" > -->
-                <input type="text" class="container bg-white my-2 p-5 border rounded">
+                <input type="text" id="display" class="container text-end text-5 fs-1 bg-white my-2 p-3 border rounded" value="0">
                 <div class="row mx-1">
-                    <div class="col-md m-1 p-0"><button class="btn text-primary w-100 m-0 btn-outline-dark bg-light">MC</button></div>
-                    <div class="col-md m-1 p-0"><button class="btn text-primary w-100 m-0 btn-outline-dark bg-light">MR</button></div>
-                    <div class="col-md m-1 p-0"><button class="btn text-primary w-100 m-0 btn-outline-dark bg-light">MS</button></div>
-                    <div class="col-md m-1 p-0"><button class="btn text-primary w-100 m-0 btn-outline-dark bg-light">M+</button></div>
-                    <div class="col-md m-1 p-0"><button class="btn text-primary w-100 m-0 btn-outline-dark bg-light">M-</button></div>
+                    <div class="col-md m-1 p-0"><button class="btn mc text-primary w-100 m-0 btn-outline-dark bg-light">MC</button></div>
+                    <div class="col-md m-1 p-0"><button class="btn mr text-primary w-100 m-0 btn-outline-dark bg-light">MR</button></div>
+                    <div class="col-md m-1 p-0"><button class="btn ms text-primary w-100 m-0 btn-outline-dark bg-light">MS</button></div>
+                    <div class="col-md m-1 p-0"><button class="btn mi text-primary w-100 m-0 btn-outline-dark bg-light">M+</button></div>
+                    <div class="col-md m-1 p-0"><button class="btn md text-primary w-100 m-0 btn-outline-dark bg-light">M-</button></div>
                 </div>
                 <div class="row mx-1">
-                    <div class="col-md m-1 p-0"><button class="btn text-primary w-100 m-0 btn-outline-dark bg-light"><-</button></div>
-                    <div class="col-md m-1 p-0"><button class="btn text-primary w-100 m-0 btn-outline-dark bg-light">CE</button></div>
-                    <div class="col-md m-1 p-0"><button class="btn text-primary w-100 m-0 btn-outline-dark bg-light">C</button></div>
+                    <div class="col-md m-1 p-0"><button class="btn bs text-primary w-100 m-0 btn-outline-dark bg-light"><-</button></div>
+                    <div class="col-md m-1 p-0"><button class="btn bs text-primary w-100 m-0 btn-outline-dark bg-light">CE</button></div>
+                    <div class="col-md m-1 p-0"><button class="btn clear text-primary w-100 m-0 btn-outline-dark bg-light">C</button></div>
                     <div class="col-md m-1 p-0"><button class="btn text-primary w-100 m-0 btn-outline-dark bg-light">+-</button></div>
-                    <div class="col-md m-1 p-0"><button class="btn text-primary w-100 m-0 btn-outline-dark bg-light">&#8730</button></div>
+                    <div class="col-md m-1 p-0"><button class="btn sqrt text-primary w-100 m-0 btn-outline-dark bg-light">&#8730</button></div>
                 </div>
                 <div class="row mx-1">
-                    <div class="col-md m-1 p-0"><button class="btn w-100 m-0 btn-outline-dark bg-light">7</button></div>
-                    <div class="col-md m-1 p-0"><button class="btn w-100 m-0 btn-outline-dark bg-light">8</button></div>
-                    <div class="col-md m-1 p-0"><button class="btn w-100 m-0 btn-outline-dark bg-light">9</button></div>
-                    <div class="col-md m-1 p-0"><button class="btn text-primary w-100 m-0 btn-outline-dark bg-light">/</button></div>
-                    <div class="col-md m-1 p-0"><button class="btn text-primary w-100 m-0 btn-outline-dark bg-light">%</button></div>
+                    <div class="col-md m-1 p-0"><button class="btn btn-num-op w-100 m-0 btn-outline-dark bg-light hover:bg-dark">7</button></div>
+                    <div class="col-md m-1 p-0"><button class="btn btn-num-op w-100 m-0 btn-outline-dark bg-light">8</button></div>
+                    <div class="col-md m-1 p-0"><button class="btn btn-num-op w-100 m-0 btn-outline-dark bg-light">9</button></div>
+                    <div class="col-md m-1 p-0"><button class="btn btn-num-op text-primary w-100 m-0 btn-outline-dark bg-light">/</button></div>
+                    <div class="col-md m-1 p-0"><button class="btn btn-num-op text-primary w-100 m-0 btn-outline-dark bg-light">%</button></div>
                 </div>
                 <div class="row mx-1">
-                    <div class="col-md m-1 p-0"><button class="btn w-100 m-0 btn-outline-dark bg-light">4</button></div>
-                    <div class="col-md m-1 p-0"><button class="btn w-100 m-0 btn-outline-dark bg-light">5</button></div>
-                    <div class="col-md m-1 p-0"><button class="btn w-100 m-0 btn-outline-dark bg-light">6</button></div>
-                    <div class="col-md m-1 p-0"><button class="btn text-primary w-100 m-0 btn-outline-dark bg-light">*</button></div>
-                    <div class="col-md m-1 p-0"><button class="btn text-primary w-100 m-0 btn-outline-dark bg-light">1/x</button></div>
+                    <div class="col-md m-1 p-0"><button class="btn btn-num-op w-100 m-0 btn-outline-dark bg-light">4</button></div>
+                    <div class="col-md m-1 p-0"><button class="btn btn-num-op w-100 m-0 btn-outline-dark bg-light">5</button></div>
+                    <div class="col-md m-1 p-0"><button class="btn btn-num-op w-100 m-0 btn-outline-dark bg-light">6</button></div>
+                    <div class="col-md m-1 p-0"><button class="btn btn-num-op text-primary w-100 m-0 btn-outline-dark bg-light">*</button></div>
+                    <div class="col-md m-1 p-0"><button class="btn reci text-primary w-100 m-0 btn-outline-dark bg-light">1/x</button></div>
                 </div>
                 <div class="row mx-1">
                     <div class="wid-80">
                         <div class="row">
-                            <div class="col-md m-1 p-0"><button class="btn w-100 m-0 btn-outline-dark bg-light">1</button></div>
-                            <div class="col-md m-1 p-0"><button class="btn w-100 m-0 btn-outline-dark bg-light">2</button></div>
-                            <div class="col-md m-1 p-0"><button class="btn w-100 m-0 btn-outline-dark bg-light">3</button></div>
-                            <div class="col-md m-1 p-0"><button class="btn text-primary w-100 m-0 btn-outline-dark bg-light">-</button></div>
+                            <div class="col-md m-1 p-0"><button class="btn btn-num-op w-100 m-0 btn-outline-dark bg-light">1</button></div>
+                            <div class="col-md m-1 p-0"><button class="btn btn-num-op w-100 m-0 btn-outline-dark bg-light">2</button></div>
+                            <div class="col-md m-1 p-0"><button class="btn btn-num-op w-100 m-0 btn-outline-dark bg-light">3</button></div>
+                            <div class="col-md m-1 p-0"><button class="btn btn-num-op text-primary w-100 m-0 btn-outline-dark bg-light">-</button></div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6 w-98 m-1 p-0"><button class="btn w-100 btn-outline-dark bg-light">0</button></div>
-                            <div class="col-md m-1 p-0"><button class="btn text-primary w-100 btn-outline-dark bg-light">.</button></div>
-                            <div class="col-md m-1 p-0"><button class="btn text-primary w-100 btn-outline-dark bg-light">+</button></div>
+                            <div class="wid-48 m-1 p-0"><button class="btn btn-num-op w-100 btn-outline-dark bg-light">0</button></div>
+                            <div class="col-md m-1 p-0"><button class="btn btn-num-op w-100 btn-outline-dark bg-light">.</button></div>
+                            <div class="col-md m-1 p-0"><button class="btn btn-num-op text-primary w-100 btn-outline-dark bg-light">+</button></div>
                         </div>
                     </div>
                     <div class="wid-20 m-0 p-1">
-                        <div class="w-100 h-100"><button class="btn text-primary h-100 w-100 btn-outline-dark bg-light">=</button></div>
+                        <div class="w-100 h-100"><button class="btn equal text-primary h-100 w-100 btn-outline-dark bg-light">=</button></div>
                     </div>
                 </div>
                 <!-- <div class="row">
@@ -97,5 +97,6 @@
         </div>
         <!-- <div class="container-4"></div> -->
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
