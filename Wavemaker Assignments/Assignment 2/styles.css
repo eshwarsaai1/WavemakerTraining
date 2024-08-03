@@ -14,22 +14,13 @@
 
 .outerbox{
     background-color: rgb(33, 77, 110);
-    width: fit-content;
-    height: 100%;
+    width: 40%;
     border-radius: 10px;
     margin: auto;
-    padding: 2px;
+    padding: 5px;
 }
 
-#income{
-    width: 100%;
-}
-
-#proff{
-    width: 100%;
-}
-
-#hobbies{
+#income, #proff, #hobbies, #mail, #bio, .textinput{
     width: 100%;
 }
 
@@ -38,7 +29,6 @@ form{
     border: 1px solid black;
     align-items: center;
     width: 100%;
-    height: 100%;
     background-color: aliceblue;
 }
 
@@ -59,25 +49,17 @@ input{
     margin-bottom: 10px;
 }
 
-.textinput{
-    width: 100%;
-}
-
 .hobbies{
     width: 50%;
 }
 
-.submit{
+.submit-btn{
     background-color: rgb(7, 87, 7);
     border: none;
     border-radius: 4px;
     color: white;
     margin-top: 10px;
-    padding: 2px;
-}
-
-#mail{
-    width: 100%;
+    padding: 5px;
 }
 
 select{
@@ -96,9 +78,6 @@ select{
     background-color: rgb(238, 238, 238);
     padding: 10px 40px 10px 10px;
 }
-#bio{
-    width: 100%
-}
 
 @media screen and (max-width: 600px) {
     .floatleft{
@@ -112,5 +91,8 @@ select{
     .footer{
         text-align: center;
         padding: 2px;
+    }
+    .outerbox{
+        width: fit-content;
     }
   }

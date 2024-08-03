@@ -101,12 +101,13 @@ function memoDec(){
 }
 
 function reciprocate(){
-    display.value=Math.round((1/display.value)*100)/100;
+    if(display.value == 0) alert("Denominator cannot be zero");
+    else display.value=Math.round((1/display.value)*100)/100;
 }
 
 function squareRoot(){
     if(display.value<0) alert("Can't Square root negative number")
-    display.value=Math.round(Math.sqrt(display.value)*100)/100;
+    else display.value=Math.round(Math.sqrt(display.value)*100)/100;
 }
 
 function evaluate(){
