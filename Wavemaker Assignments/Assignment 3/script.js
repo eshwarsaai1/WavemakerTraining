@@ -42,10 +42,6 @@ function insert(){
     const cur_val=this.innerHTML;
     if(display.value=='0'){
         display.value=null;
-        if(cur_val == '+' || cur_val == '-'){
-            display.value+=cur_val;
-            return;
-        }
     }
     if(operators.includes(cur_val)){
         op_exists++;
@@ -54,12 +50,12 @@ function insert(){
 };
 
 function clearScreen(){
-    op_exists=false;
+    op_exists=0;
     display.value=0;
 }
 
 function backSpace(){
-    if(operators.includes(display.value[(display.value).length - 1])) op_exists=false;
+    if(operators.includes(display.value[(display.value).length - 1])) op_exists--;
     display.value=display.value.slice(0,-1);
     if((display.value).length == 0) display.value=0;
 }
@@ -70,7 +66,7 @@ function negate(){
 }
 
 function memoStore(){
-    if(op_exists) alert("Can't store with operator");
+    if(op_exists>0) alert("Can't store with operator");
     else{
         storage=Number(display.value);
         display.value=0;
