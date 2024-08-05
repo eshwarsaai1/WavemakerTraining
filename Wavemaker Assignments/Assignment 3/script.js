@@ -1,6 +1,6 @@
 let storage=0;
 const operators = ['+','-','/','*','%'];
-var op_exists=false;
+var op_exists=0;
 
 const display=document.getElementById('display');
 const btns=document.querySelectorAll('.btn-num-op');
@@ -14,6 +14,7 @@ const memorystore=document.querySelector(".ms");
 const memoryinc=document.querySelector(".mi");
 const memorydec=document.querySelector(".md");
 const equal=document.querySelector(".equal");
+const plusorminus=document.querySelector(".negate");
 
 
 
@@ -26,6 +27,7 @@ memorystore.addEventListener('click', memoStore);
 memoryinc.addEventListener('click', memoInc);
 memorydec.addEventListener('click', memoDec);
 equal.addEventListener('click', evaluate);
+plusorminus.addEventListener('click', negate);
 
 
 btns.forEach(btn => {
@@ -45,18 +47,10 @@ function insert(){
             return;
         }
     }
-    const prev_val=display.value[(display.value).length-1];
     if(operators.includes(cur_val)){
-        if(!op_exists){
-            op_exists=true;
-            display.value+=cur_val;
-        }
-        else if((operators.includes(prev_val)) && (prev_val!=cur_val) && (cur_val=='+' || cur_val=='-')){
-            display.value+=cur_val;
-        }
-        else alert("Only one operator allowed at a time");
+        op_exists++;
     }
-    else display.value+=cur_val;
+    display.value+=cur_val;
 };
 
 function clearScreen(){
@@ -68,6 +62,11 @@ function backSpace(){
     if(operators.includes(display.value[(display.value).length - 1])) op_exists=false;
     display.value=display.value.slice(0,-1);
     if((display.value).length == 0) display.value=0;
+}
+
+function negate(){
+    evaluate();
+    display.value=-1*(display.value);
 }
 
 function memoStore(){
@@ -88,7 +87,7 @@ function memoClear(){
 }
 
 function memoInc(){
-    if(op_exists) alert("Can't store with operator");
+    if(op_exists) alert("Can't add with operator");
     else{
         storage+=Number(display.value);
         display.value=0;
@@ -96,8 +95,10 @@ function memoInc(){
 }
 
 function memoDec(){
-    storage-=Number(display.value);
-    display.value=0;
+    if(op_exists) alert("Can't subtract with operator");
+    else {storage-=Number(display.value);
+        display.value=0;
+    }
 }
 
 function reciprocate(){
@@ -106,6 +107,7 @@ function reciprocate(){
 }
 
 function squareRoot(){
+    evaluate();
     if(display.value<0) alert("Can't Square root negative number")
     else display.value=Math.round(Math.sqrt(display.value)*100)/100;
 }
