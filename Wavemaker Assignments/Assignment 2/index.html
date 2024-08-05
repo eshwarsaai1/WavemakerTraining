@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="outerbox">
-        <form>
+        <form action="submit()">
             <h2 class="header">Create Account</h2>
             <div class="content">
                 <div class="floatleft">
@@ -24,11 +24,11 @@
                 <br>
                 <div class="floatleft">
                     <label class="subhead" for="pass">Password</label><br>
-                    <input type="text" class="textinput" placeholder="Enter your password" id="pass" required>
+                    <input type="password" class="textinput" placeholder="Enter your password" id="pass" required>
                 </div>
                 <div class="floatright">
                     <label class="subhead" for="confpass">Confirm password</label><br>
-                    <input type="text" class="textinput" placeholder="Enter your password again" id="confpass" required>
+                    <input type="password" class="textinput" placeholder="Enter your password again" id="confpass" required>
                 </div>
                 <div>
                     <div class="floatleft">
@@ -54,7 +54,6 @@
                         <option>Employed</option>
                         <option>Business</option>
                         <option>Farmer</option>
-                        <option>wager</option>
                     </select><br>
                 </div>
                 <div class="floatright">
@@ -77,5 +76,6 @@
             </div>
         </form>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
