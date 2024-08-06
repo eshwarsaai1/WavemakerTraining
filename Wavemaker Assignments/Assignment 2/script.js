@@ -42,4 +42,25 @@ async function loadUser(){
     }
 }
 
-loadUser();
+window.onload = function() {
+    loadUser()
+};
+
+document.getElementById("submit").addEventListener('click', postdata);
+
+async function postdata(){
+    var accountform=document.getElementById("accountform");
+    const formdetails=new FormData(accountform);
+    const formdata=Object.fromEntries(formdetails.entries());
+    
+
+    var response = await fetch("https://dummyjson.com/users/", {
+        method: 'POST',
+        headers: { 'Content-type' : 'application/json'},
+        body: JSON.stringify(formdata)
+    })
+    
+    if(response.ok) alert("uploaded successfully");
+    else alert("Something went wrong");
+    accountform.reset();
+}

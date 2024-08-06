@@ -8,49 +8,49 @@
 </head>
 <body>
     <div class="outerbox">
-        <form action="submit()">
+        <form id="accountform">
             <h2 class="header">Create Account</h2>
             <div class="content">
                 <div class="floatleft">
                     <label class="subhead" for="fname">First Name</label><br>
-                    <input type="text" class="textinput" id="fname" placeholder="Enter your first name" required>
+                    <input type="text" name="fname" class="textinput" id="fname" placeholder="Enter your first name" required>
                 </div>
                 <div class="floatright">
                     <label class="subhead" for="lname">Last Name</label><br>
-                    <input type="text" class="textinput" id="lname" placeholder="Enter your last name" required>
+                    <input type="text" name="lname" class="textinput" id="lname" placeholder="Enter your last name" required>
                 </div>
                 <lable class="subhead" for="mail">Email</lable><br>
-                <input type="text" id="mail" class="textinput" placeholder="Enter your email" required>
+                <input type="text" id="mail" name="mail" class="textinput" placeholder="Enter your email" required>
                 <br>
                 <div class="floatleft">
                     <label class="subhead" for="pass">Password</label><br>
-                    <input type="password" class="textinput" placeholder="Enter your password" id="pass" required>
+                    <input type="password" name="pass" class="textinput" placeholder="Enter your password" id="pass" required>
                 </div>
                 <div class="floatright">
                     <label class="subhead" for="confpass">Confirm password</label><br>
-                    <input type="password" class="textinput" placeholder="Enter your password again" id="confpass" required>
+                    <input type="password" name="confpass" class="textinput" placeholder="Enter your password again" id="confpass" required>
                 </div>
                 <div>
                     <div class="floatleft">
                         <span class="subhead">Gender:</span><br>
-                        <input type="radio" id="male">
+                        <input type="radio" name="male" id="male">
                         <label for="male">Male</label>
-                        <input type="radio" id="female">
+                        <input type="radio" name="female" id="female">
                         <label for="female">Female</label>
                     </div>
                     <div class="floatright hobbies">
                     <span class="subhead">Hobbies:</span><br>
-                    <input type="checkbox" id="swim">
+                    <input type="checkbox" name="swim" id="swim">
                     <label for="swim">Swimming</label>
-                    <input type="checkbox" id="music">
+                    <input type="checkbox" name="music" id="music">
                     <label for="music">Music</label>
-                    <input type="checkbox" id="travel">
+                    <input type="checkbox" name="travel" id="travel">
                     <label for="travel">Travel</label>
                     </div>
                 </div>
                 <div class="floatleft">
                     <label class="subhead" for="proff">Source of income</label><br>
-                    <select id="proff">
+                    <select id="proff" name="proff">
                         <option>Employed</option>
                         <option>Business</option>
                         <option>Farmer</option>
@@ -58,23 +58,23 @@
                 </div>
                 <div class="floatright">
                     <label class="subhead" for="income">Income</label><br>
-                    <input type="range" id="income" min="15000" max="100000">
+                    <input type="range" name="income" id="income" min="15000" max="100000">
                 </div>
                 <div class="floatleft">
                     <label class="subhead" for="file">Upload a file</label><br>
-                    <input type="file" id="file">
+                    <input type="file" name="file" id="file">
                 </div>
                 <div  class="floatright">
                     <label class="subhead" for="age">Age</label><br>
-                    <input id="age" class="textinput" type="number" placeholder="Enter your age">
+                    <input id="age" name="age" class="textinput" type="number" placeholder="Enter your age">
                 </div>
                 <label class="subhead" for="bio">Bio</label><br>
-                <textarea id="bio" rows="5" cols="58"></textarea><br>
-            </div>
-            <div class="footer">
-                <input class="submit-btn" type="submit" value="Create">
+                <textarea id="bio" name="bio" rows="5" cols="58"></textarea><br>
             </div>
         </form>
+        <div class="footer">
+            <input id="submit" class="submit-btn" type="submit" value="Create">
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
