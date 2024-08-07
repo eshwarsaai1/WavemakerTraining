@@ -1,0 +1,34 @@
+:root{
+    --background: white;
+    --text: black;
+}
+
+.darkmode{
+    --background: black;
+    --text: white;
+}
+
+body, .task, .content{
+    background-color: var(--background);
+    color: var(--text);
+}
+
+#theme{
+    cursor: pointer;
+}
+
+.prior-high{
+    background-color: rgb(255, 0, 0.5);
+}
+
+.prior-medium{
+    background-color: rgba(255, 200, 0, 0.5);
+}
+
+.prior-low{
+    background-color: rgba(0, 204, 20, 0.5);
+}
+
+.drager{
+    border-radius: 5px 0px 0px 5px;
+}
