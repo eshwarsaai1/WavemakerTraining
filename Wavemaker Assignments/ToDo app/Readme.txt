@@ -14,5 +14,5 @@ dark theme.
 Editing validation.
 
 issues:
-Notification is sending even task is deleted. I will fix it by tonight.
+Notification is sending even task is deleted.
 Subtask add button Eventlistener is duplicating. Cant remove Eventlistener.
