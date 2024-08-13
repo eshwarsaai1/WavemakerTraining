@@ -8,6 +8,7 @@ Features:
 validation taskname/deadline.
 sorting time/priority.
 Export/import.
+Subtasks.
 Search task and subtask.
 Notifications.
 dark theme.
