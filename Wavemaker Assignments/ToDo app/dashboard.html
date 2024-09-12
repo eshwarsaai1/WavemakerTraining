@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Todo app</title>
+</head>
+
+<body>
+    <div class="d-flex align-items-center flex-fill">
+        <input type="file" class="input mx-0 d-none" id="import-file">
+        <button class=" btn fs-2" id="import-btn">📂</button>
+        <h1 class="w-100 text-center text-success">TODO Application</h1>
+        <div class="d-sm-flex align-items-center">
+        <a class="btn fs-2" id="export-btn">📤</a>
+        <button id="logout-btn" class="btn rounded bg-success text-white px-3 py-1 margin-right">logout</button>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center">
+        <input type="text" class="col-sm-8 p-2 rounded-pill" name="search" id="search" placeholder="Search for a task">
+        <button id="theme" class="col-sm-1 btn fs-2"> 🌙 </button>
+    </div>
+    <div class="row d-flex justify-content-end my-1 mx-3">
+        <input class="col-sm-2 m-1 rounded" type="text" name="task-name" id="task-name" placeholder="Enter task name">
+        <input class="col-sm-2 m-1 rounded" type="datetime-local" name="duration" id="duration">
+        <select class="col-sm-1 m-1 rounded" name="priority" id="priority">
+            <option value="high"> high </option>
+            <option value="medium"> medium </option>
+            <option value="low"> low </option>
+        </select>
+        <button id="add-btn" class="col-sm-1 btn m-1 py-0 bg-dark text-white">add</button>
+    </div>
+    <!-- <hr> -->
+    <div class="d-flex justify-content-end">
+        <button id="sortbtn" class="btn rounded bg-success text-white px-3 py-1">sort</button>
+        <select name="sortby" id="sortby" class="mx-2">
+            <option value="Sort by priority">Sort by priority</option>
+            <option value="Sort by deadline">Sort by deadline</option>
+        </select>
+    </div>
+    <div id="dialog" class="d-flex justify-content-center w-100 position-absolute d-none">
+        <div class="edit-content bg-secondary p-5 ">
+            <input type="text" id="edit-name">
+            <input type="datetime-local" id="edit-time">
+            <select class="rounded" name="priority" id="edit-priority">
+                <option value="high"> high </option>
+                <option value="medium"> medium </option>
+                <option value="low"> low </option>
+            </select>
+            <button class="btn" id="save-edit">Save</button>
+        </div>
+    </div>
+    <div id="subtask-dialog" class="d-flex justify-content-center w-100 position-absolute d-none">
+        <div class="edit-content bg-secondary p-5 ">
+            <input type="text" id="subtask-name" placeholder="Enter subtask name">
+            <input type="datetime-local" id="subtask-time">
+            <select class="rounded" name="priority" id="subtask-priority">
+                <option value="high"> high </option>
+                <option value="medium"> medium </option>
+                <option value="low"> low </option>
+            </select>
+            <button class="btn" id="subtask-add">add</button>
+        </div>
+    </div>
+    <div id="task-container" class="row mx-auto p-0">
+        <!-- <div draggable="true" class="task col-md-5 m-2 px-0 rounded border">
+            <div class="d-flex align-items-center m-0 px-0 rounded">
+                <span class="drager p-3 h-100 prior-low">::</span>
+                <div class="w-100 px-1">
+                    <h5 class=" ">Assignment 1 </h5>
+                    <time datetime="06-08-2024"> 2024-07-12T07:05 </time>
+                </div>
+                <button class="btn px-1 border mx-1 bg-light py-0"> + </button>
+                <button class="btn px-1 border mx-1 bg-light py-0">Edit</button>
+                <button class="btn px-1 border mx-1 bg-light py-0">Delete</button>
+            </div>
+            <div class="subtask d-flex justify-content-end m-0">
+                <div class="col-md-10 d-flex align-items-center m-2 px-0 border rounded">
+                    <span class="drager p-3 h-100 prior-low">::</span>
+                    <div class="w-100 px-1">
+                        <h5 class=" ">search </h5>
+                        <time datetime="06-08-2024"> Duration : </time>
+                    </div>
+                    <button class="btn px-1 border mx-1 bg-light py-0">Edit</button>
+                    <button class="btn px-1 border mx-1 bg-light py-0">Delete</button>
+                </div>
+            </div>
+            <div class="subtask d-flex justify-content-end m-0">
+                <div class="col-md-10 d-flex align-items-center m-2 px-0 border rounded">
+                    <span class="drager p-3 h-100 prior-low">::</span>
+                    <div class="w-100 px-1">
+                        <h5 class=" ">dress </h5>
+                        <time datetime="06-08-2024"> Duration : </time>
+                    </div>
+                    <button class="btn px-1 border mx-1 bg-light py-0">Edit</button>
+                    <button class="btn px-1 border mx-1 bg-light py-0">Delete</button>
+                </div>
+            </div>
+        </div>
+        <div draggable="true" class="task col-md-5 m-2 px-0 rounded border">
+            <div class="d-flex align-items-center m-0 px-0 rounded">
+                <span class="drager p-3 h-100 prior-high">::</span>
+                <div class="w-100 px-1">
+                    <h5 class=" ">Assignment 2 </h5>
+                    <time datetime="06-08-2024"> 2024-08-12T07:05 </time>
+                </div>
+                <button class="btn px-1 border mx-1 bg-light py-0"> + </button>
+                <button class="btn px-1 border mx-1 bg-light py-0">Edit</button>
+                <button class="btn px-1 border mx-1 bg-light py-0">Delete</button>
+            </div>
+            <div class="subtask d-flex justify-content-end m-0">
+                <div class="col-md-10 d-flex align-items-center m-2 px-0 border rounded">
+                    <span class="drager p-3 h-100 prior-low">::</span>
+                    <div class="w-100 px-1">
+                        <h5 class=" ">search </h5>
+                        <time datetime="06-08-2024"> Duration : </time>
+                    </div>
+                    <button class="btn px-1 border mx-1 bg-light py-0">Edit</button>
+                    <button class="btn px-1 border mx-1 bg-light py-0">Delete</button>
+                </div>
+            </div><div class="subtask d-flex justify-content-end m-0">
+                <div class="col-md-10 d-flex align-items-center m-2 px-0 border rounded">
+                    <span class="drager p-3 h-100 prior-low">::</span>
+                    <div class="w-100 px-1">
+                        <h5 class=" ">dress </h5>
+                        <time datetime="06-08-2024"> 2024-07-12T18:05 </time>
+                    </div>
+                    <button class="btn px-1 border mx-1 bg-light py-0">Edit</button>
+                    <button class="btn px-1 border mx-1 bg-light py-0">Delete</button>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
